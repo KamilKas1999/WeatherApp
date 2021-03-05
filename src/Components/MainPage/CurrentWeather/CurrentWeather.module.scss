@@ -1,0 +1,25 @@
+.CurrentWeather {
+  padding-top: 5px;
+  font-size: 20px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #cbf3c3;
+  border: 2px solid black;
+  border-radius: 5px;
+  img {
+    width: 130px;
+  }
+}
+.Row{
+  display: flex;
+  justify-content: space-around;
+}
+
+.Temp{
+  margin-left: 5%;
+  width:15%;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-around;
+}

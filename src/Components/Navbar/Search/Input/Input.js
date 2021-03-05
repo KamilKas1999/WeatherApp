@@ -12,7 +12,6 @@ class Input extends Component {
     return (
       <div>
         <input ref = {this.input} type="text" onChange={this.props.clicked} />
-        <button onClick={() => this.props.changeCity(this.input.current.value)}>Search</button>
       </div>
     );
   }

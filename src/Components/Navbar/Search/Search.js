@@ -32,6 +32,12 @@ class Search extends Component {
       });
   };
 
+  clearState = (id) => {
+    this.setState({
+      searched : null
+    })
+  }
+
   onNameClick = (id) => {
     const temp = this.state.searched[id];
     return temp;
@@ -41,7 +47,7 @@ class Search extends Component {
     return (
       <div>
         <Input clicked={this.onSearch} changeCity ={this.props.changeCity}/>
-        <Result cities = {this.state.searched} clicked = {this.onNameClick} changeCity ={this.props.changeCity}/>
+        <Result cities = {this.state.searched} clicked = {this.onNameClick} clear={this.clearState}  changeCity ={this.props.changeCity}/>
       </div>
     );
   }
