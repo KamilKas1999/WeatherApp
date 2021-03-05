@@ -1,10 +1,9 @@
-import './App.scss';
-import Layout from './Layout/Layout'
-import MainPage from './Container/MainPage/MainPage'
+import "./App.scss";
+import Layout from "./Layout/Layout";
 function App() {
   return (
     <div className="App">
-     <Layout><MainPage/></Layout>
+      <Layout />
     </div>
   );
 }

@@ -6,7 +6,7 @@ const navbar = (props) => (
   <header>
     <div className={classes.Navbar}>
       <Logo />
-      <Search />
+      <Search changeCity ={props.changeCity}/>
     </div>
   </header>
 );
