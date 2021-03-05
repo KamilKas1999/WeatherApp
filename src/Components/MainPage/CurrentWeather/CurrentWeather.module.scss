@@ -4,22 +4,41 @@
   width: 70%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #cbf3c3;
+  // background-color: #cbf3c3;
+  background: rgb(94, 138, 146);
+  background: linear-gradient(
+    90deg,
+    rgba(94, 138, 146, 1) 10%,
+    rgba(183, 220, 227, 1) 90%
+  );
+
   border: 2px solid black;
   border-radius: 5px;
+  padding: 10px;
   img {
     width: 130px;
   }
 }
-.Row{
+.Row {
   display: flex;
   justify-content: space-around;
 }
 
-.Temp{
-  margin-left: 5%;
-  width:15%;
+.Temp {
+  margin-left: 2%;
+  width: 20%;
   font-size: 30px;
-  display: flex;
-  justify-content: space-around;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+}
+.Wind,
+.Pressure {
+  text-align: center;
+}
+h6 {
+  margin: 2px;
+  margin-top: 10px;
 }

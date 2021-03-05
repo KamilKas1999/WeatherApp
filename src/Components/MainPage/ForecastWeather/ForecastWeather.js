@@ -8,6 +8,11 @@ const ForecastWeather = (props) => {
     });
   }
 
-  return <div>{forecast}</div>;
+  return (
+    <div>
+
+      <div>{forecast}</div>
+    </div>
+  );
 };
 export default ForecastWeather;

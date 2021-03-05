@@ -1,6 +1,5 @@
 import "./App.scss";
 import Layout from "./Layout/Layout";
-import axios from 'axios';
 
 
 function App() {

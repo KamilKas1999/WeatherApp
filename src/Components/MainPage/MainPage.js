@@ -26,9 +26,6 @@ class MainPage extends Component {
         },
       })
       .then((data) => {
-        console.log(data.data.current)
-        console.log(data.data.forecast.forecastday)
-        console.log(data.data.forecast)
         this.setState({
           current: data.data.current,
           actualCity: data.data.location.name,
@@ -38,11 +35,7 @@ class MainPage extends Component {
   }
 
   componentDidUpdate() {
-    console.log(this.props.city);
-    console.log(this.state.actualCity);
-
     if (this.props.city.includes(this.state.actualCity)) {
-      console.log("zwracam");
       return;
     }
     axios
@@ -59,7 +52,6 @@ class MainPage extends Component {
         },
       })
       .then((data) => {
-        console.log(data.data.location);
         this.setState({
           current: data.data.current,
           actualCity: data.data.location.name,

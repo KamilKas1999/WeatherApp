@@ -1,0 +1,11 @@
+.Hour {
+    display: block;
+    width: 16.3666666667%;
+    height: 200px;
+    padding: 1px;
+    text-align: center;
+    &:hover{
+        background-color: #d1d1d1;
+        border: 1px solid black;
+    }
+}

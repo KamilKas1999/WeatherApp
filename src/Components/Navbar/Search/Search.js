@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Input from "./Input/Input";
-import result from "./Result/Result";
 import Result from "./Result/Result";
 import axios from "axios";
 class Search extends Component {
