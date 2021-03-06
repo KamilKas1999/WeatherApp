@@ -5,8 +5,12 @@ import Search from "./Search/Search";
 const navbar = (props) => (
   <header>
     <div className={classes.Navbar}>
-      <Logo />
-      <Search changeCity ={props.changeCity}/>
+      <div>
+        <Logo />
+      </div>
+      <div>
+        <Search changeCity={props.changeCity} />
+      </div>
     </div>
   </header>
 );

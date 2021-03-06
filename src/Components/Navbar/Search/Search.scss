@@ -1,0 +1,12 @@
+.Search {
+  z-index: 100;
+}
+
+@media (max-width: 500px) {
+  .Search {
+    width: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+}

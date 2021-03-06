@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './Input.module.scss'
+import './Input.scss'
 class Input extends Component {
 
   constructor(props){
@@ -10,7 +10,7 @@ class Input extends Component {
 
   render() {
     return (
-      <div>
+      <div className="Input">
         <input ref = {this.input} type="text" onChange={this.props.clicked} />
       </div>
     );

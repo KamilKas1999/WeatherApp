@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Input from "./Input/Input";
 import Result from "./Result/Result";
 import axios from "axios";
+import './Search.scss'
 class Search extends Component {
   state = {
     searched: null,
@@ -31,7 +32,7 @@ class Search extends Component {
       });
   };
 
-  clearState = (id) => {
+  clearState = () => {
     this.setState({
       searched : null
     })
@@ -44,7 +45,7 @@ class Search extends Component {
 
   render() {
     return (
-      <div>
+      <div className = "Search">
         <Input clicked={this.onSearch} changeCity ={this.props.changeCity}/>
         <Result cities = {this.state.searched} clicked = {this.onNameClick} clear={this.clearState}  changeCity ={this.props.changeCity}/>
       </div>

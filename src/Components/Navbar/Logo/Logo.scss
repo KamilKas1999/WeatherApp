@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Galindo&display=swap");
+.Logo {
+  font-size: 25px;
+  font-family: "Galindo", cursive;
+  img {
+    width: 32px;
+  }
+  .Content {
+    display: flex;
+    p {
+      margin: 0;
+    }
+  }
+}
+@media (max-width: 500px) {
+  .Logo {
+    width: 100%;
+    text-align: center;
+    align-content: center;
+    text-align: center;
+    .Content {
+      width: 250px;
+      margin-left: auto;
+      margin-right: auto;
+      justify-content: space-around;
+    }
+  }
+}

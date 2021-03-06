@@ -2,7 +2,7 @@ import React from "react";
 import classes from "./Result.module.scss";
 
 const result = (props) => {
-  const func = (city,id) => {
+  const func = (city, id) => {
     props.changeCity(city);
     props.clear(id);
   };
@@ -14,7 +14,7 @@ const result = (props) => {
         <p
           key={id}
           onClick={() => {
-            func(city,id);
+            func(city, id);
           }}
         >
           {city}

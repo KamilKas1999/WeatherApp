@@ -17,9 +17,9 @@ const CurrentWeather = (props) => {
         <div className={classes.Row}>
           <div className={classes.Temp}>
             <div>
-              <h6>temperature:</h6>
-              {props.currentWeather.temp_c}°C Feels:{" "}
-              {props.currentWeather.feelslike_c}°C
+              <h6>Temperature:</h6>
+              <p>{props.currentWeather.temp_c}°C </p>
+              <p>Feels: {props.currentWeather.feelslike_c}°C</p>
             </div>
           </div>
           <div className={classes.Pressure}>
@@ -27,10 +27,9 @@ const CurrentWeather = (props) => {
             <p>{props.currentWeather.pressure_mb} mBar</p>
           </div>
           <div className={classes.Wind}>
-              <h6>Wind</h6>
-              {props.currentWeather.wind_kph}Km/h {props.currentWeather.wind_dir}
-              
-            </div>
+            <h6>Wind:</h6>
+            {props.currentWeather.wind_kph}Km/h {props.currentWeather.wind_dir}
+          </div>
         </div>
         <div className={classes.Row}>
           <p>Last update : {props.currentWeather.last_updated}</p>

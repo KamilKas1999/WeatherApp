@@ -1,17 +1,24 @@
 import React, { Component } from "react";
-import City from "./City/City";
-import CurrentWeather from "./CurrentWeather/CurrentWeather";
-import ForecastWeather from "./ForecastWeather/ForecastWeather";
+import City from "../../Components/MainPage/City/City";
+import CurrentWeather from "../../Components/MainPage/CurrentWeather/CurrentWeather";
+import ForecastWeather from "../../Components/MainPage/ForecastWeather/ForecastWeather";
 import axios from "axios";
-import classes from './MainPage.module.scss'
+import classes from "./MainPage.module.scss";
+import Spinner from "../../Components/Ui/LoadingSpinner/LoadingSpinner";
 class MainPage extends Component {
   state = {
     current: null,
-    forecast : null,
+    forecast: null,
     actualCity: null,
+    loading: true,
+  };
+
+  startLoading = () => {
+    this.setState({ loading: true });
   };
 
   componentDidMount() {
+    this.startLoading();
     axios
       .get("https://weatherapi-com.p.rapidapi.com/forecast.json", {
         headers: {
@@ -22,20 +29,26 @@ class MainPage extends Component {
         },
         params: {
           q: this.props.city,
-          days: "14",
+          days: "3",
         },
       })
       .then((data) => {
+        console.log(data)
         this.setState({
           current: data.data.current,
           actualCity: data.data.location.name,
-          forecast: data.data.forecast.forecastday
+          forecast: data.data.forecast.forecastday,
+          loading: false,
         });
+      })
+      .catch((error) => {
+        console.log(error.message);
       });
   }
 
   componentDidUpdate() {
-    if (this.props.city.includes(this.state.actualCity)) {
+    const onlyCity = this.props.city.split(",");
+    if (onlyCity[0] === this.state.actualCity) {
       return;
     }
     axios
@@ -48,26 +61,35 @@ class MainPage extends Component {
         },
         params: {
           q: this.props.city,
-          days: "14",
+          days: "3",
         },
       })
       .then((data) => {
+        console.log(data)
         this.setState({
           current: data.data.current,
           actualCity: data.data.location.name,
-          forecast: data.data.forecast.forecastday
+          forecast: data.data.forecast.forecastday,
+          loading: false,
         });
+      })
+      .catch((error) => {
+        console.log(error.message);
       });
   }
 
   render() {
-    return (
-      <div className = {classes.MainPage}>
+    let content = (
+      <div>
         <City city={this.props.city} />
         <CurrentWeather currentWeather={this.state.current} />
-        <ForecastWeather forecast = {this.state.forecast}/>
+        <ForecastWeather forecast={this.state.forecast} />
       </div>
     );
+    if (this.state.loading) {
+      content = <Spinner />;
+    }
+    return <div className={classes.MainPage}>{content}</div>;
   }
 }
 export default MainPage;

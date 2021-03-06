@@ -18,27 +18,39 @@
   img {
     width: 130px;
   }
-}
-.Row {
-  display: flex;
-  justify-content: space-around;
+  .Row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+  }
+  
+  .Temp {
+    margin-left: 2%;
+    width: 20%;  
+    text-align: center;
+  }
+  
+  p {
+    margin: 0;
+  }
+  .Wind,
+  .Pressure {
+    text-align: center;
+  }
+  h6 {
+    margin: 2px;
+    margin-top: 10px;
+    font-size: 30px;
+  }
+  
+  @media (max-width: 1000px){
+    .Row{
+      display: block;
+      text-align: center;
+    }
+    .Temp{
+      width: 100%;
+    }
+  }
 }
 
-.Temp {
-  margin-left: 2%;
-  width: 20%;
-  font-size: 30px;
-  text-align: center;
-}
-
-p {
-  margin: 0;
-}
-.Wind,
-.Pressure {
-  text-align: center;
-}
-h6 {
-  margin: 2px;
-  margin-top: 10px;
-}

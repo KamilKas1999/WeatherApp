@@ -1,22 +1,15 @@
 import React, { Component } from "react";
 import Navbar from "../Components/Navbar/Navbar";
 import Aux from "../hoc/Auxalinary";
-import MainPage from "../Components/MainPage/MainPage";
-class Layout extends Component {
-  state = {
-    city: "London",
-  };
+import MainPage from '../Container/MainPage/MainPage';
 
-  cityChanged = (city) => {
-    this.setState({
-      city: city,
-    });
-  };
+class Layout extends Component{
+  
   render() {
     return (
       <Aux>
-        <Navbar changeCity={this.cityChanged} />
-        <MainPage city={this.state.city} />
+        <Navbar changeCity={this.props.changeCity} />
+        <MainPage city={this.props.city} />
       </Aux>
     );
   }
