@@ -12,7 +12,8 @@
   );
 
   margin-top: 20px;
-  border: 2px solid black;
+  box-shadow: -3px -3px #0f373e inset;
+  border: 2px solid #001013;
   border-radius: 5px;
   //padding: 10px;
   h4 {
@@ -38,10 +39,15 @@
   display: flex;
   justify-content: space-around;
   text-align: center;
+  margin: 10px 0;
 }
 h5 {
   font-size: 20px;
   margin: 10px 0px;
+}
+
+h1{
+  margin-top: 10px;
 }
 
 .Hours {

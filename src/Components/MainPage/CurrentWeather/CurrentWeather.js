@@ -7,12 +7,11 @@ const CurrentWeather = (props) => {
     actualWeather = (
       <Aux>
         <div className={classes.Row}>
-          <div>
+          <div className={classes.Row}>
             <img src={props.currentWeather.condition.icon} alt="icon"></img>
-          </div>
-          <div>
             <h1>{props.currentWeather.condition.text}</h1>
           </div>
+         
         </div>
         <div className={classes.Row}>
           <div className={classes.Temp}>
